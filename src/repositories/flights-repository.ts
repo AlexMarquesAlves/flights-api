@@ -1,4 +1,5 @@
 import { prisma } from '../database/prisma'
+import { AddFlightDTO } from '../dtos/flights'
 
 export async function findAll(params: unknown) {
   return await prisma.flight.findMany({
@@ -9,8 +10,9 @@ export async function findAll(params: unknown) {
   })
 }
 
-export async function add(params: unknown) {
+export async function add(data: AddFlightDTO) {
+  const { departure, ...rest } = data
   return await prisma.flight.create({
-    data: {},
+    data: { departure: new Date(departure), ...rest },
   })
 }
