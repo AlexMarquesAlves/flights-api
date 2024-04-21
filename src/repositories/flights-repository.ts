@@ -1,7 +1,7 @@
 import { prisma } from '../database/prisma'
 import { AddFlightDTO } from '../dtos/flights'
 
-export async function findAll(params: unknown) {
+export async function findAll() {
   return await prisma.flight.findMany({
     orderBy: {
       departure: 'desc',
