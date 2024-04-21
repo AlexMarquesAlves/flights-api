@@ -11,8 +11,13 @@ jobs:
         with:
           bun-version: 'latest'
 
-      - name: Run Eslint
+      - name: Install dependencies
         run: |
-          echo "Running eslint...
+          bun install
+
+      - name: Run Prettier check & Eslint --Fix
+        run: |
+          bun run prettier:check
+          bun run prettier:format
           bun run eslint
           bun run eslint:fix
