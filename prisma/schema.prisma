@@ -12,3 +12,14 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Flight {
+  id          Int      @id @default(autoincrement())
+  origin      String
+  destination String
+  departure   DateTime
+  airline     String
+  price       Float
+
+  @@map("flights")
+}
