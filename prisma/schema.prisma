@@ -23,3 +23,11 @@ model Flight {
 
   @@map("flights")
 }
+
+model Passenger {
+  id    String @id @default(uuid())
+  name  String
+  email String
+
+  @@map("passengers")
+}
