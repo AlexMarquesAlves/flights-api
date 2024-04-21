@@ -21,6 +21,8 @@ model Flight {
   airline     String
   price       Float
 
+  reservation Reservation[]
+
   @@map("flights")
 }
 
@@ -29,15 +31,20 @@ model Passenger {
   name  String
   email String
 
+  reservation Reservation[]
+
   @@map("passengers")
 }
 
 model Reservation {
-  d               String   @id @default(uuid())
+  d               String     @id @default(uuid())
   flightId        String
   pessengerId     String
   seatNumber      Int
-  reservationDate DateTime @default(now())
+  reservationDate DateTime   @default(now())
+  Flight          Flight     @relation(fields: [flightId], references: [id])
+  Passenger       Passenger? @relation(fields: [passengerId], references: [id])
+  passengerId     String?
 
   @@map("reservations")
 }
