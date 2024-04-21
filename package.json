@@ -13,6 +13,7 @@
     "prettier:check": "prettier \"src/**/*.{ts,tsx,js,jsx}\" --check"
   },
   "dependencies": {
+    "@prisma/client": "5.12.1",
     "elysia": "latest",
     "eslint-import-resolver-typescript-bun": "^0.0.85",
     "eslint-plugin-import": "^2.29.1",
