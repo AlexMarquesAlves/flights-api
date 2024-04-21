@@ -1,7 +1,9 @@
 import { Elysia } from 'elysia'
+import { findAll } from '../handler/flightsHandler'
 
 export const flightsRoutes = (app: Elysia) => {
   app.get('/flights', async () => {
-    return { response: 'Hello, World!' }
+    const result = findAll()
+    return { result }
   })
 }
