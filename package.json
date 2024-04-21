@@ -17,6 +17,7 @@
     "elysia": "latest",
     "eslint-import-resolver-typescript-bun": "^0.0.85",
     "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.2.5",
     "prisma": "^5.12.1"
   },
   "devDependencies": {
