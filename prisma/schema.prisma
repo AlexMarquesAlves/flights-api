@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Flight {
-  id          Int      @id @default(autoincrement())
+  id          String   @id @default(uuid())
   origin      String
   destination String
   departure   DateTime
