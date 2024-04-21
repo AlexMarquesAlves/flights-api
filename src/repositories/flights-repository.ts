@@ -8,3 +8,9 @@ export async function findAll(params: unknown) {
     include: { reservation: true },
   })
 }
+
+export async function add(params: unknown) {
+  return await prisma.flight.create({
+    data: {},
+  })
+}
