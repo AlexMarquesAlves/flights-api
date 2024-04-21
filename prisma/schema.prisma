@@ -31,3 +31,13 @@ model Passenger {
 
   @@map("passengers")
 }
+
+model Reservation {
+  d               String   @id @default(uuid())
+  flightId        String
+  pessengerId     String
+  seatNumber      Int
+  reservationDate DateTime @default(now())
+
+  @@map("reservations")
+}
